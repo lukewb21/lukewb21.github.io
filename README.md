@@ -1,3 +1,3 @@
 # lukewb21.github.io
 
-This repository is currently hosting a fallback page for my current project hosted at spyreact.me
+This repository is currently hosting a temporary maintenance page for my site: spyreact.me
