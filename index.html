@@ -1,17 +1,61 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>SPYREACT</title>
-  <link rel="stylesheet" type="text/css" href="styles.css">
-  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
-  <link rel="manifest" href="manifest.json">
-</head>
-<body>
-<main>
-  <div class="content-container">
-    <img src="assets/512x512.png" alt="spyreact.me logo" class="header-logo">
-    <h1>coming soon</h1>
-  </div>
-</main>
-</body>
-</html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>SPYREACT</title>
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
+    <link rel="manifest" href="./manifest.json">
+    <link rel="stylesheet" href="./styles.css">
+    <style>
+
+     </style>
+   </head>
+   <body>
+
+     <main>
+       <div class="container">
+         <div class="content-container">
+           <img src="./assets/512x512.png" alt="spyreact.me logo" class="secret-logo" />
+
+           <div class="date-placeholder">
+             <p>NEXT MISSION: <span style="color:#ff0000">JULY 2026</span></p>
+           </div>
+
+           <div class="input-container">
+             <form id="accessForm" onsubmit="handleAccessForm(event)" style="width:100%; display:flex; flex-direction:column; align-items:center;">
+               <input id="accessCode" class="input" type="text" placeholder="Access Code" aria-label="Access Code" />
+               <button type="submit" class="button">Enter</button>
+               <div id="accessDeniedMessage" class="access-denied-message hidden">ACCESS DENIED</div>
+             </form>
+           </div>
+         </div>
+       </div>
+     </main>
+
+     <footer>
+       <div class="copyright">© SPYREACT 2026</div>
+     </footer>
+
+     <script>
+       function handleAccessForm(e) {
+         e.preventDefault();
+         showAccessDenied();
+       }
+
+       function showAccessDenied() {
+         const msg = document.getElementById('accessDeniedMessage');
+         if (!msg) return;
+         msg.classList.remove('hidden');
+         // Auto-hide after 2 seconds
+         setTimeout(hideAccessDenied, 2000);
+       }
+
+       function hideAccessDenied() {
+         const msg = document.getElementById('accessDeniedMessage');
+         if (!msg) return;
+         msg.classList.add('hidden');
+       }
+     </script>
+   </body>
+ </html>

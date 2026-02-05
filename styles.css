@@ -1,61 +1,143 @@
+footer {
+  background-color: transparent;
+  color: white;
+  text-align: center;
+  font-size: 12px;
+  padding: 20px 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  margin-top: auto;
+}
+
+footer a { color: #ffffff; }
+footer a:hover { text-decoration: underline; }
+
+@media (max-width: 768px) {
+  footer { font-size: 10px; padding: 15px 0; }
+}
+
+.copyright { color: #777; font-size: 12px; margin-top: 10px; }
+
+/* Global Reset */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Helvetica', sans-serif; }
+
+html, body { height: 100%; margin: 0; padding: 0; }
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-  sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   background-color: black;
   color: white;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  align-items: center;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Helvetica', sans-serif;
-}
-
-/* Main Content Styling */
 main {
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.container {
+  width: 100%;
+  max-width: 720px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .content-container {
   display: flex;
-  flex-direction: column; /* Stack image and text vertically */
-  align-items: center; /* Center horizontally */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.header-logo {
-  width: 100px; /* Adjust the image size as needed */
-  height: auto;
-  margin-bottom: 20px; /* Add some space between the image and text */
+.secret-logo {
+  width: 140px;
+  height: 140px;
+  margin-bottom: 20px;
+  display: block;
 }
 
-main h1 {
-  margin: 0; /* Remove default margin from h1 */
-}
-
-/* Optional: Header and Footer Styling (if you add them later) */
-header {
-  width: 100%;
-  background-color: #000;
-  padding: 10px 0;
+.date-placeholder {
+  font-weight: bold;
+  margin-bottom: 20px;
   text-align: center;
 }
 
-footer {
+.input-container {
   width: 100%;
-  background-color: #000;
-  padding: 10px 0;
-  text-align: center;
-  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
+.input {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 12px;
+  font-size: 16px;
+  padding: 12px;
+  margin: 10px 0;
+  outline: none;
+  border: 2px solid gray;
+  background-color: transparent;
+  color: white;
+  transition: border-color 0.3s ease;
+}
+
+.input:focus { border-color: white; }
+
+.button {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 12px;
+  font-size: 16px;
+  padding: 12px;
+  margin: 10px 0;
+  outline: none;
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.button:hover { background-color: white; color: black; }
+.button:focus { border-color: gray; }
+
+@media (max-width: 768px) {
+  .container { padding: 20px; }
+  .secret-logo { width: 120px; height: 120px; }
+  .input, .button { width: 100%; max-width: 100%; }
+}
+
+body, input, button, select, textarea {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, "Segoe UI", Roboto, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (max-width: 768px) {
+  .container { padding: 20px; }
+  .secret-logo { width: 120px; height: 120px; }
+  .input, .button { width: 100%; max-width: 100%; }
+}
+
+.access-denied-message {
+  color: #ff0000;
+  padding-top: 8px;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0px;
+  text-align: center;
+}
+.access-denied-message.hidden { display: none; }
